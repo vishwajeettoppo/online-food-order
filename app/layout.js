@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AppSessionProvider from "@/utils/AppSessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className=" max-w-4xl  mx-auto p-4 ">
+          <AppSessionProvider>{children}</AppSessionProvider>
+        </main>
+      </body>
     </html>
   );
 }
