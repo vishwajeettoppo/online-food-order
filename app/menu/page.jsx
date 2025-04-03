@@ -11,7 +11,7 @@ export default function MenuPage() {
 
   useEffect(() => {
     fetch("/api/profile").then((response) => {
-      response.json().then((data) => {
+      response?.json().then((data) => {
         setIsAdmin(data.admin);
       });
     });
@@ -43,14 +43,16 @@ export default function MenuPage() {
       });
       setCategoryName("");
       fetchCategories();
-      setEditCategory(null)
+      setEditCategory(null);
       if (response.ok) resolve();
       else reject();
     });
 
     await toast.promise(creationPromise, {
-      loading: editCategory?'Updating category...':"Creating new category...",
-      success: editCategory?'Updated category':"Added category",
+      loading: editCategory
+        ? "Updating category..."
+        : "Creating new category...",
+      success: editCategory ? "Updated category" : "Added category",
       error: "Something went wrong!",
     });
   }
