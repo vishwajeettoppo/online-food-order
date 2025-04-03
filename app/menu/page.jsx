@@ -65,8 +65,11 @@ export default function MenuPage() {
       <div className="flex justify-between">
         <div className="grid grid-cols-4">
           {categories?.length > 0 &&
-            categories.map((cat) => (
-              <div className="flex flex-col text-center border-2 rounded-lg p-2">
+            categories.map((cat, index) => (
+              <div
+                key={index}
+                className="flex flex-col text-center border-2 rounded-lg p-2"
+              >
                 {cat.name}
                 {isAdmin && (
                   <button

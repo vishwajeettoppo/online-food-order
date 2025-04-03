@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,7 +18,7 @@ export default function LoginPage() {
     setLoginInProgress(true);
     setError(false);
 
-    await signIn("credentials", { email, password,  callbackUrl: "/" });
+    await signIn("credentials", { email, password, callbackUrl: "/" });
 
     // setEmail("");
     // setPassword("");
@@ -79,7 +79,7 @@ export default function LoginPage() {
             </button>
           </form>
           <div className="">
-            Don't have an account yet?
+            Don&apos;t have an account yet?
             <Link href={"/register"} className=" text-blue font-bold">
               {" "}
               Register now &raquo;
@@ -91,13 +91,16 @@ export default function LoginPage() {
             className="w-64 flex gap-4 text-center mx-auto bg-white px-4 py-2 rounded-lg text-gray-600"
             onClick={handleGoogleSignIn}
           >
-            <img src="/google.png" alt="" width={"24px"} />
+            <Image
+              src="/google.png"
+              alt=""
+              width={20}
+              height={20}
+              className=" object-contain"
+            />
             Continue with Google
           </button>
-
-
           {/* <button onClick={() => loginWithRedirect()}>Log In</button> */}
-
         </div>
 
         <div className="relative">

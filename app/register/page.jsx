@@ -100,7 +100,13 @@ export default function RegisterPage() {
             onClick={() => signIn("google")}
             type="button"
           >
-            <img src="/google.png" alt="" width={"24px"} />
+            <Image
+              src="/google.png"
+              alt=""
+              width={20}
+              height={20}
+              className=" object-contain"
+            />
             Continue with Google
           </button>
         </div>
